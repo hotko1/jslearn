@@ -46,3 +46,18 @@ const obj = {
     Anna: 500,
     'Alice': 800
 };
+
+
+
+
+
+
+const storeName = 'Shop';
+const storeDescription = {};
+storeDescription.budget = 10000;
+storeDescription.employess = ['Tuz', 'Luz', 'Kuz'];
+storeDescription.products = {
+    milk: 10,
+    cheese: 25
+};
+storeDEscription.open = true;
