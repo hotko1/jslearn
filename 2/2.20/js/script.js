@@ -28,3 +28,12 @@ const personalMovieDB = {
     privat: false
 };
 
+const a = prompt('Один з останніх переглянутих фільмів?', ''),
+      b = prompt('На скільки його оцінюєте?', ''),
+      c = prompt('Один з останніх переглянутих фільмів?', ''),
+      d = prompt('На скільки його оцінюєте?', '');
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
