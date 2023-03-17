@@ -140,8 +140,10 @@ let radius = 5;
     for (i = 1; i < 5; i++) {
         const firsts = 'testtext';
         b += i;
+        radius += i;
         c = 2 * Math.PI * radius;
         eval(firsts + b + '=' + c);
+        console.log(eval(firsts + b));
     };
 })()
 
