@@ -211,25 +211,20 @@ const lines = 5;
 let result2 = '';
 let spase, star;
 // Проверяется именно переменная result, формируйте строку в ней
-for (i = 0; i <= lines; i++) {
+for (let i = 0; i <= lines; i++) {
     spase = (lines - i);
     star = 1 + i * 2;
 
-    for (j = 0; j < spase; j++) {
+    for (let j = 0; j < spase; j++) {
         result2 += ' ';
-
-        for (k = 0; k < star; k++) {
-            result2 += '*';
-        }
+    }
+    for (let k = 0; k < star; k++) {
+        result2 += '*';
     }
 
-    // result2 += '\n';
-    
-    console.log(result2);
-
-    // for (j = 5; j <= lines; j--) {
-    //     result2 += result2;
-
-    //     console.log(i);
-    // }
+    if (i < lines) {
+        result2 += '\n';
+    }
 }
+
+console.log(result2);
