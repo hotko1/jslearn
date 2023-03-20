@@ -139,3 +139,73 @@ function fifthTask2() {
     // Не трогаем
     return arrayOfNumbers;
 }
+
+
+
+// Вправи по написанню кода.
+
+// Место для первой задачи
+(function firstTask4() {
+    // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+    const arr = [3, 5, 8, 16, 20, 23, 50];
+    const result = [];
+
+    // Пишем решение вот тут
+    let lenghtArr = arr.length;
+    for (let i = 0; i < lenghtArr; i++) {
+        result[i] = arr[i]; 
+    }
+    
+    console.log(result);
+    
+    // Не трогаем
+    return result;
+})()
+
+// Место для второй задачи
+function secondTask4() {
+    // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+    const data = [5, 10, 'Shopping', 20, 'Homework'];
+
+    // Пишем решение вот тут
+    let lenghtArrData = data.length;
+    for (let i = 0; i < lenghtArrData; i++) {
+        let typeItemData = typeof(data[i]);
+        if (typeItemData === 'string') {
+            data[i] = data[i] + ' - done';
+        } else if (typeItemData === 'number') {
+            data[i] *= 2;
+        }
+    }
+    
+    console.log(data);
+    
+    // Не трогаем
+    return data;
+}
+
+// Место для третьей задачи
+(function thirdTask4() {
+    // Значения массива менять нельзя, тут он проверяется автоматически именно на эти значения
+    const data = [5, 10, 'Shopping', 20, 'Homework'];
+    const result = [];
+
+    // Пишем решение вот тут
+    let lenghtArrData = data.length;
+    for (let i = 1; i <= lenghtArrData; i++) {
+        result[lenghtArrData - i] = data[i - 1];
+    }
+
+     4 - 0
+     3 - 1
+     2 - 2
+     1 - 3
+     0 - 4
+
+    console.log(lenghtArrData);
+    console.log(result);
+    
+    
+    // Не трогаем
+    return result;
+})()
