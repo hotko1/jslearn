@@ -196,16 +196,40 @@ function secondTask4() {
         result[lenghtArrData - i] = data[i - 1];
     }
 
-     4 - 0
-     3 - 1
-     2 - 2
-     1 - 3
-     0 - 4
-
-    console.log(lenghtArrData);
     console.log(result);
     
     
     // Не трогаем
     return result;
 })()
+
+
+
+// Вправа по написанню коду 5.
+
+const lines = 5;
+let result2 = '';
+let spase, star;
+// Проверяется именно переменная result, формируйте строку в ней
+for (i = 0; i <= lines; i++) {
+    spase = (lines - i);
+    star = 1 + i * 2;
+
+    for (j = 0; j < spase; j++) {
+        result2 += ' ';
+
+        for (k = 0; k < star; k++) {
+            result2 += '*';
+        }
+    }
+
+    // result2 += '\n';
+    
+    console.log(result2);
+
+    // for (j = 5; j <= lines; j--) {
+    //     result2 += result2;
+
+    //     console.log(i);
+    // }
+}
