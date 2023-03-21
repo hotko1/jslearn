@@ -209,22 +209,41 @@ function secondTask4() {
 
 const lines = 5;
 let result2 = '';
-let spase, star;
+let space, star;
 // Проверяется именно переменная result, формируйте строку в ней
 for (let i = 0; i <= lines; i++) {
-    spase = (lines - i);
+    space = (lines - i);
     star = 1 + i * 2;
 
-    for (let j = 0; j < spase; j++) {
+    for (let j = 0; j < space; j++) {
         result2 += ' ';
     }
     for (let k = 0; k < star; k++) {
         result2 += '*';
     }
 
-    if (i < lines) {
-        result2 += '\n';
-    }
+    // if (i < lines) {
+    //     result2 += '\n';
+    // }
+    result2 += '\n';
 }
 
 console.log(result2);
+
+
+(function taskfifth() {
+    const lines = 5;
+    let = result = '';
+
+    for (let i = 0; i <= lines; i++) {
+        for (let j = 0; j < lines - i; j++) {
+            result += " ";
+        }
+        for (let j = 0; j < 2 * i + 1; j++) {
+            result += "*";
+        }
+        result += "\n";
+    }
+
+    console.log(result);
+})()
