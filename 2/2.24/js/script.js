@@ -26,27 +26,81 @@ const personalMovieDB = {
     privat: false
 };
 
-beginning: for (let i = 0; i < 2; i++) {
+// for
+// beginning: for (let i = 0; i < 2; i++) {
+//     let a = '',
+//         b = '';
+
+//         console.log(i);
+
+//     a = prompt('Один з останніх переглянутих фільмів?', '');
+
+//     if (a === '' || a.length > 50) {
+//         --i;
+//         continue beginning;
+//     }
+    
+//     b = prompt('На скільки його оцінюєте?', '');
+    
+//     if (b === '' || b.length > 50) {
+//         --i;
+//         continue beginning;
+//     }
+
+//     console.log(a, b);
+
+//     personalMovieDB.movies[a] = b;
+// }
+
+// while
+
+let i = 0;
+beginning: while (i < 2) {
     let a = '',
         b = '';
 
     a = prompt('Один з останніх переглянутих фільмів?', '');
 
     if (a === '' || a.length > 50) {
+        // for (let variableKey in personalMovieDB.movies) {
+        //     if (personalMovieDB.movies.hasOwnProperty(variableKey)) {
+        //         delete personalMovieDB.movies[variableKey];
+        //     }
+        // }
+        // delete personalMovieDB[0];
+        // i = 0;
         continue beginning;
-        i = 0;
     }
     
     b = prompt('На скільки його оцінюєте?', '');
     
     if (b === '' || b.length > 50) {
+        // for (let variableKey in personalMovieDB.movies) {
+        //     if (personalMovieDB.movies.hasOwnProperty(variableKey)) {
+        //         delete personalMovieDB.movies[variableKey];
+        //     }
+        // }
+        // delete personalMovieDB[0];
+        // i = 0;
         continue beginning;
-        i = 0;
     }
+
+    i++;
 
     console.log(a, b);
 
     personalMovieDB.movies[a] = b;
+}
+
+
+if (personalMovieDB.count < 10) {
+    console.log('Переглянуто дуже мало фільмів');
+} else if (personalMovieDB.count < 31) {
+    console.log('Ви класичний глядач');
+} else if (personalMovieDB.count > 30) {
+    console.log('Ви кіноман');
+} else {
+    console.log('Відбулася помилка');
 }
 
 console.log(personalMovieDB);
