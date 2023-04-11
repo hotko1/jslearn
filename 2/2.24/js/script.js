@@ -26,24 +26,21 @@ const personalMovieDB = {
     privat: false
 };
 
-// for
+// for - mine
+
 // beginning: for (let i = 0; i < 2; i++) {
-//     let a = '',
-//         b = '';
 
-//         console.log(i);
+//     const a = prompt('Один з останніх переглянутих фільмів?', '');
 
-//     a = prompt('Один з останніх переглянутих фільмів?', '');
-
-//     if (a === '' || a.length > 50) {
-//         --i;
+//     if (a === '' || a === null || a.length > 50) {
+//         i--;
 //         continue beginning;
 //     }
     
-//     b = prompt('На скільки його оцінюєте?', '');
+//     const b = prompt('На скільки його оцінюєте?', '');
     
-//     if (b === '' || b.length > 50) {
-//         --i;
+//     if (b === '' || b === null || b.length > 50) {
+//         i--;
 //         continue beginning;
 //     }
 
@@ -52,36 +49,37 @@ const personalMovieDB = {
 //     personalMovieDB.movies[a] = b;
 // }
 
-// while
+
+// for - correctly
+
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt('Один з останніх переглянутих фільмів?', ''),
+//           b = prompt('На скільки його оцінюєте?', '');
+
+//     if (a != null && b !=null && a != '' && b != '' && a.length < 50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log('done');
+//     } else {
+//         console.log('error');
+//         i--;
+//     }
+// }
+
+
+// while - mine
 
 let i = 0;
 beginning: while (i < 2) {
-    let a = '',
-        b = '';
 
-    a = prompt('Один з останніх переглянутих фільмів?', '');
+    const a = prompt('Один з останніх переглянутих фільмів?', '');
 
-    if (a === '' || a.length > 50) {
-        // for (let variableKey in personalMovieDB.movies) {
-        //     if (personalMovieDB.movies.hasOwnProperty(variableKey)) {
-        //         delete personalMovieDB.movies[variableKey];
-        //     }
-        // }
-        // delete personalMovieDB[0];
-        // i = 0;
+    if (a === '' || a === null || a.length > 50) {
         continue beginning;
     }
     
-    b = prompt('На скільки його оцінюєте?', '');
+    const b = prompt('На скільки його оцінюєте?', '');
     
-    if (b === '' || b.length > 50) {
-        // for (let variableKey in personalMovieDB.movies) {
-        //     if (personalMovieDB.movies.hasOwnProperty(variableKey)) {
-        //         delete personalMovieDB.movies[variableKey];
-        //     }
-        // }
-        // delete personalMovieDB[0];
-        // i = 0;
+    if (b === '' || b === null || b.length > 50) {
         continue beginning;
     }
 
@@ -93,11 +91,42 @@ beginning: while (i < 2) {
 }
 
 
+// while - new mine
+
+// let i = 0;
+// while (i < 2) {
+//     const a = prompt('Один з останніх переглянутих фільмів?', ''),
+//           b = prompt('На скільки його оцінюєте?', '');
+
+//     if (a != null && b !=null && a != '' && b != '' && a.length < 50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log('done');
+//         i++;
+//     } else {
+//         console.log('error');
+//     }
+// }
+
+
+// mine
+
+// if (personalMovieDB.count < 10) {
+//     console.log('Переглянуто дуже мало фільмів');
+// } else if (personalMovieDB.count < 31) {
+//     console.log('Ви класичний глядач');
+// } else if (personalMovieDB.count > 30) {
+//     console.log('Ви кіноман');
+// } else {
+//     console.log('Відбулася помилка');
+// }
+
+// correctly
+
 if (personalMovieDB.count < 10) {
     console.log('Переглянуто дуже мало фільмів');
-} else if (personalMovieDB.count < 31) {
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
     console.log('Ви класичний глядач');
-} else if (personalMovieDB.count > 30) {
+} else if (personalMovieDB.count >= 30) {
     console.log('Ви кіноман');
 } else {
     console.log('Відбулася помилка');
@@ -105,4 +134,4 @@ if (personalMovieDB.count < 10) {
 
 console.log(personalMovieDB);
 
-123456789132456789132456789123456789132456789132456789123456789132456789132456789123456789132456789132456798132456748913245678913245678913245678945613245678913456789134564654545646765545454545454554544444444444444444444444444444444444444444444444444444444444444444444444444444444
+// 123456789132456789132456789123456789132456789132456789123456789132456789132456789123456789132456789132456798132456748913245678913245678913245678945613245678913456789134564654545646765545454545454554544444444444444444444444444444444444444444444444444444444444444444444444444444444
