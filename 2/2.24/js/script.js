@@ -122,6 +122,7 @@ beginning: while (i < 2) {
 
 // correctly
 
+
 if (personalMovieDB.count < 10) {
     console.log('Переглянуто дуже мало фільмів');
 } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
