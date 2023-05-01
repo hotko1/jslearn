@@ -1,7 +1,7 @@
 // Место для первой задачи
 let name = 'Denis';
 function sayHello(name) {
-    return 'Hello ' + name;
+    return 'Привет, ' + name;
 }
 
 
