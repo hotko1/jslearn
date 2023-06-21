@@ -24,7 +24,7 @@ fib(5);
 
 // Код від ментора.
 function fibs(num) {
-    if (typeof(num) !== 'number' || num <=0 || !Number.isInteger(num)) {
+    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
         return '';
     }
 
