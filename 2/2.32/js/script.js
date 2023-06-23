@@ -24,7 +24,9 @@ console.log(Object.keys(options));
 console.log(Object.keys(options).length);
 
 
-// console.log(options['colors']['border']);
+console.log(options['colors']['border']);
+console.log(options.colors.border);
+
 
 
 // console.log(options.name);
