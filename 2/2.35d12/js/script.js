@@ -26,7 +26,8 @@ const baseCurrencies = ['USD', 'EUR'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
 function availableCurr(arr, missingCurr) {
-    let val = '';
+    let val = '',
+        str = '';
     // console.log(typeof arr);
     for (let bank in arr) {
         // console.log(bank);
@@ -34,9 +35,10 @@ function availableCurr(arr, missingCurr) {
         // console.log(arr[bank]);
         for (let valute in arr[bank]) {
             val = arr[bank][valute];
-            if (val !== missingCurr) {
-                val += `${arr[bank][valute]}\n`;;
-            }
+            str += `${val}\n`;
+            // if (val !== missingCurr) {
+            //     val += `${arr[bank][valute]}\n`;;
+            // }
             
             // console.log(typeof valute);
 
@@ -48,7 +50,8 @@ function availableCurr(arr, missingCurr) {
             // str += `${valute}\n`;
         }
     }
-    console.log(val);
+    // console.log(val);
+    console.log(str);
     // str = arr.forEach(element => console.log(element));
 
     // console.log(str);
