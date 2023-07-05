@@ -34,11 +34,13 @@ function availableCurr(arr, missingCurr) {
         // console.log(typeof arr[bank]);
         // console.log(arr[bank]);
         for (let valute in arr[bank]) {
-            val = arr[bank][valute];
-            str += `${val}\n`;
-            // if (val !== missingCurr) {
-            //     val += `${arr[bank][valute]}\n`;;
-            // }
+            // val = arr[bank][valute];
+            // str += `${val}\n`;
+            if (arr[bank][valute] !== missingCurr) {
+                val = arr[bank][valute];
+                str += `${val}\n`;
+                // val += `${arr[bank][valute]}\n`;
+            }
             
             // console.log(typeof valute);
 
@@ -57,4 +59,4 @@ function availableCurr(arr, missingCurr) {
     // console.log(str);
 }
 
-availableCurr([baseCurrencies, additionalCurrencies], 'EUR');
+availableCurr([baseCurrencies, additionalCurrencies], 'RUB');
