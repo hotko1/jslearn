@@ -2,6 +2,7 @@
 
 const someString = 'This is some strange string';
 
+// Мій код.
 function reverse(str) {
     let stringReverse;
     if (typeof str !== 'string') {
@@ -21,11 +22,30 @@ function reverse(str) {
 
 reverse(someString);
 
+// Код ментора.
+function reverses(str) {
+    if (typeof(str) !== 'string') {
+        return 'Ошибка!';
+    }
+    console.log(str.split('').reverse().join(''));
+    return str.split('').reverse().join('');
+
+    // Ще є варіант розв'язку за допомогою цикла.
+    let newStr = '';
+    // for (let i = str.length -1; i >= 0; i--) {
+    //     newStr +=str[i];
+    // }
+    // return newStr;
+}
+
+reverses(someString);
+
 
 const baseCurrencies = ['USD', 'EUR'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 const nullvalute = [];
 
+// Мій код, але не підходить до вирішення, бо приймає два масива в об'єкті.
 function availableCurr(arr, missingCurr) {
     let val = '',
         str = '';
@@ -42,7 +62,7 @@ function availableCurr(arr, missingCurr) {
 
 availableCurr([baseCurrencies, additionalCurrencies], 'RUB');
 
-
+// мій код.
 function availableCurrs(arr, missingCurr) {
     let val = '',
         str = 'Доступные валюты:\n';
@@ -62,4 +82,29 @@ function availableCurrs(arr, missingCurr) {
     return str;
 }
 
-availableCurrs(additionalCurrencies, 'RUB');
+availableCurrs([...baseCurrencies, ...additionalCurrencies], 'RUB');
+
+// Код ментора.
+function availableCurrss(arr, missingCurr) {
+    let str = '';
+    arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+    arr.forEach(function(curr, i) {
+        if (curr !== missingCurr) {
+            str += `${curr}\n`;
+        }
+    });
+
+    // Чи.
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] === missingCurr) {
+    //         continue;
+    //     }
+    //     str += `${arr[i]}\n`;
+    // }
+
+    console.log(str);
+    return str;
+}
+
+availableCurrss([...baseCurrencies, ...additionalCurrencies], 'CNY');
