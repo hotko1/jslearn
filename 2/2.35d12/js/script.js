@@ -24,39 +24,42 @@ reverse(someString);
 
 const baseCurrencies = ['USD', 'EUR'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+const nullvalute = [];
 
 function availableCurr(arr, missingCurr) {
     let val = '',
         str = '';
-    // console.log(typeof arr);
     for (let bank in arr) {
-        // console.log(bank);
-        // console.log(typeof arr[bank]);
-        // console.log(arr[bank]);
         for (let valute in arr[bank]) {
-            // val = arr[bank][valute];
-            // str += `${val}\n`;
             if (arr[bank][valute] !== missingCurr) {
                 val = arr[bank][valute];
                 str += `${val}\n`;
-                // val += `${arr[bank][valute]}\n`;
             }
-            
-            // console.log(typeof valute);
-
-            // valute.forEach(element => {
-            //     console.log(element);
-            // });
-
-            // console.log(element);
-            // str += `${valute}\n`;
         }
     }
-    // console.log(val);
     console.log(str);
-    // str = arr.forEach(element => console.log(element));
-
-    // console.log(str);
 }
 
 availableCurr([baseCurrencies, additionalCurrencies], 'RUB');
+
+
+function availableCurrs(arr, missingCurr) {
+    let val = '',
+        str = 'Доступные валюты:\n';
+
+    if (arr.length === 0) {
+        console.log('Нет доступных валют');
+        return 'Нет доступных валют';
+    } else {
+        for (let valute in arr) {
+            if (arr[valute] !== missingCurr) {
+                val = arr[valute];
+                str += `${val}\n`;
+            }
+        }
+    }
+    console.log(str);
+    return str;
+}
+
+availableCurrs(additionalCurrencies, 'RUB');
