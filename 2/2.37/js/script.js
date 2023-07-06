@@ -14,8 +14,6 @@
 
 'use strict';
 
-start();
-
 const personalMovieDB = {
     count: 0,
     movies: {},
@@ -68,8 +66,37 @@ const personalMovieDB = {
         }
     },
     writeYourGenres: function() {
-        for (let i = 1; i <= 3; i++) {
-            personalMovieDB.genres[i - 1] = prompt(`Ваш улюблений жанр під номером ${i}`);
+        // Перший варіант рішення коли задається три питання.
+        // for (let i = 1; i <= 3; i++) {
+        //     let genre = prompt(`Ваш улюблений жанр під номером ${i}`);
+
+        //     if (genre === '' || genre == null) {
+        //         console.log('Ви ввели некоректін дані чи не ввели зовсям');
+        //         i--;
+        //     } else {
+        //         personalMovieDB.genres[i - 1] = genre;
+        //     }
+        // }
+
+        // personalMovieDB.genres.forEach((item, i) => {
+        //     console.log(`Любимый жанр #${i + 1} - это ${item}`);
+        // });
+
+        // Другий варіант рішення коли задається одне питання.
+        for (let i = 1; i < 2; i++) {
+            let genres = prompt('Введіть ваші улюблені жанри через кому').toLowerCase();
+
+            if (genres === '' || genres == null) {
+                console.log('Ви ввели некоректін дані чи не ввели зовсям');
+                i--;
+            } else {
+                personalMovieDB.genres = genres.split(/, |,/);
+                personalMovieDB.genres.sort();
+            }
         }
+
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Любимый жанр ${i + 1} - это ${item}`);
+        });
     },
 };
