@@ -37,7 +37,7 @@ function sortStudentsByGroupss(arr) {
     arr.sort();
     const a = [], b = [], c = [], rest = [];
 
-    for (let i = 0; i <arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         if (i < 3) {
             a.push(arr[i]);
         } else if (i < 6) {
