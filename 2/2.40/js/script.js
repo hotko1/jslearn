@@ -27,8 +27,8 @@ function createCounter() {
 }
 
 const increment = createCounter();
-const c1 = increment;
-const c2 = increment;
-const c3 = increment;
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
 
 console.log(c1, c2, c3);
