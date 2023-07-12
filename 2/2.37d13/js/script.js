@@ -38,10 +38,11 @@ function isBudgetEnough(data) {
     //     i++;
     // }
     for (let i = 0; i < data.shops.length; i++) {
-        let multipl = 1;
-        for (let param in data.shops[i]) {
-            multipl *= data.shops[i][param];
-        }
+        let multipl;
+        // for (let param in data.shops[i]) {
+        //     multipl *= data.shops[i][param];
+        // }
+        multipl = data.shops[i].width * data.shops[i].length;
         square += multipl;
     }
 
@@ -50,7 +51,7 @@ function isBudgetEnough(data) {
     price = volume * data.moneyPer1m3;
 
     console.log(square);
-    console.log(volume);
+    console.log(price);
     console.log(data.budget);
 
     if (price <= data.budget) {
