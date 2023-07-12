@@ -26,6 +26,7 @@ const shoppingMallData = {
 
 function isBudgetEnough(data) {
     let volume,
+        price,
         square = 0;
 
     // while (i < shoppingMallData.shops.length) {
@@ -46,11 +47,13 @@ function isBudgetEnough(data) {
 
     volume = square * data.height;
 
+    price = volume * data.moneyPer1m3;
+
     console.log(square);
     console.log(volume);
     console.log(data.budget);
 
-    if (volume <= data.budget) {
+    if (price <= data.budget) {
         console.log('Бюджета достаточно');
         return 'Бюджета достаточно';
     } else {
