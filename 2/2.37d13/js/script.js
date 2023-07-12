@@ -24,6 +24,7 @@ const shoppingMallData = {
     budget: 50000,
 }
 
+// Мій код.
 function isBudgetEnough(data) {
     let volume,
         price,
@@ -64,3 +65,26 @@ function isBudgetEnough(data) {
 }
 
 isBudgetEnough(shoppingMallData);
+
+
+// Код ментора
+function isBudgetEnoughs(data) {
+    let square = 0;
+    let volume = 0;
+
+    data.shops.forEach(shop => {
+        square +=shop.width * shop.length;
+    });
+
+    volume = data.height * square;
+
+    if (data.budget - (volume * data.moneyPer1m3) >= 0) {
+        console.log('Бюджета достаточно');
+        return 'Бюджета достаточно';
+    } else {
+        console.log('Бюджета недостаточно');
+        return 'Бюджета недостаточно';
+    }
+}
+
+isBudgetEnoughs(shoppingMallData);
