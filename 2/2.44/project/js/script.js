@@ -24,10 +24,19 @@ const movieDB = {
     ]
 };
 
+// мій код
+// document.querySelectorAll('.promo__adv img').forEach(element => {
+//     element.remove();
+// });
 
-document.querySelectorAll('.promo__adv img').forEach(element => {
-    element.remove();
+// код ментора
+const adv = document.querySelectorAll('.promo__adv img');
+adv.forEach(item => {
+    item.remove();
 });
+// adv.forEach(function (item) {
+//     item.remove();
+// });
 
 
 document.querySelector('.promo__genre').textContent = 'Драма';
