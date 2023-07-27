@@ -24,13 +24,17 @@ const movieDB = {
     ]
 };
 
+
 // мій код
 // document.querySelectorAll('.promo__adv img').forEach(element => {
 //     element.remove();
 // });
 
 // код ментора
-const adv = document.querySelectorAll('.promo__adv img');
+const adv = document.querySelectorAll('.promo__adv img'),
+      poster = document.querySelector('.promo__bg'),
+      genre = poster.querySelector('.promo__genre'),
+      movieList = document.querySelector('.promo__interactive-list');
 adv.forEach(item => {
     item.remove();
 });
@@ -39,11 +43,21 @@ adv.forEach(item => {
 // });
 
 
-document.querySelector('.promo__genre').textContent = 'Драма';
+// мій код
+// document.querySelector('.promo__genre').textContent = 'Драма';
+
+// код ментора
+genre.textContent = 'Драма';
 
 
-document.querySelector('.promo__bg').style.cssText = "background: url('./img/bg.jpg') center center/cover no-repeat";
+// мій код
+// document.querySelector('.promo__bg').style.cssText = "background: url('./img/bg.jpg') center center/cover no-repeat";
 
+// код ментора
+poster.style.backgroundImage = 'url("img/bg.jpg")';
+
+
+// Мій код, що не відповідає умові задачі
 // let massive = [],
 //     i = 0;
 // document.querySelectorAll('.promo__interactive-list li').forEach(element => {
@@ -57,18 +71,34 @@ document.querySelector('.promo__bg').style.cssText = "background: url('./img/bg.
 //     i++;
 // });
 
+// мій код
+// movieDB.movies.sort();
+
+// let filmList = document.querySelectorAll('.promo__interactive-list li'),
+//     i = 0;
+// filmList.forEach(element => {
+//     element.textContent = movieDB.movies[i];
+//     i++;
+// });
+
+
+// i = 0;
+// filmList.forEach(element => {
+//     element.before(`${i + 1}` + '.');
+//     i++;
+// });
+
+// код ментора
+movieList.innerHTML = '';
+
 movieDB.movies.sort();
 
-let filmList = document.querySelectorAll('.promo__interactive-list li'),
-    i = 0;
-filmList.forEach(element => {
-    element.textContent = movieDB.movies[i];
-    i++;
-});
+// console.log(poster.innerHTML); // отримання елементів з сторінки
 
-
-i = 0;
-filmList.forEach(element => {
-    element.before(`${i + 1}` + '.');
-    i++;
+movieDB.movies.forEach((film, i) => {
+    movieList.innerHTML += `
+        <li class="promo__interactive-item">${i + 1} ${film}
+            <div class="delete"></div>
+        </li>
+    `
 });
