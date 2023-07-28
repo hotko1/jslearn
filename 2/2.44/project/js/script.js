@@ -100,5 +100,5 @@ movieDB.movies.forEach((film, i) => {
         <li class="promo__interactive-item">${i + 1} ${film}
             <div class="delete"></div>
         </li>
-    `
+    `;
 });
