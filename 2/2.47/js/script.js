@@ -23,3 +23,28 @@ pow(2, 1) // 2
 pow(2, 2) // 4
 pow(2, 3) // 8
 pow(2, 4) //16
+
+let student = {
+    js: [{
+        name: 'John',
+        progress: 100
+    }, {
+        name: 'Ivan',
+        progress: 60
+    }],
+
+    html: {
+        basic: [{
+            name: 'Peter',
+            progress: 20
+        }, {
+            name: 'Ann',
+            progress: 18
+        }],
+
+        pro: [{
+            name: 'Sam',
+            progress: 10
+        }]
+    }
+};
