@@ -107,3 +107,14 @@ function getTotalProgressByRecursion(data) {
 const result = getTotalProgressByRecursion(students);
 
 console.log(result[0] / result[1]);
+
+// Додатковий приклад зі статті.
+const factorial = (n) => {
+    if (n === 0) {
+        return 1;
+    } 
+    return n * factorial(n-1);
+}
+
+const answer = factorial(5);
+console.log(answer);
