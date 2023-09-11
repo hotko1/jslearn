@@ -18,3 +18,34 @@ P.S. Здесь есть несколько вариантов решения з
 5) Фильмы должны быть отсортированы по алфавиту */
 
 // Возьмите свой код из предыдущей практики
+
+let btnFilm = document.querySelector('button');
+let inputFilm = document.querySelector('.adding__input');
+
+btnFilm.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    let text = inputFilm.value.trim();
+    text = text.charAt(0).toUpperCase() + text.slice(1);
+
+    if (text !== '') {
+        let node = document.createElement('li');
+        node.classList.add('promo__interactive-item');
+        node.appendChild(document.createTextNode(text));
+        document.querySelector('.promo__interactive-list').appendChild(node);
+
+        let filmArray = [],
+            i = 0;
+        document.querySelectorAll('.promo__interactive-list li').forEach(element => {
+            filmArray[i] = element.textContent;
+            i++;
+        });
+
+        filmArray.sort();
+        i = 0;
+        document.querySelectorAll('.promo__interactive-list li').forEach(element => {
+            element.textContent = filmArray[i];
+            i++;
+        });
+    }
+});
