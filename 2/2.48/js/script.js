@@ -21,6 +21,7 @@ P.S. Здесь есть несколько вариантов решения з
 
 let btnFilm = document.querySelector('button');
 let inputFilm = document.querySelector('.adding__input');
+let basket = document.querySelector('.delete');
 const movieDB = {
     movies: []
 };
@@ -56,4 +57,8 @@ btnFilm.addEventListener('click', function(event) {
             }
         });
     }
+});
+
+basket.addEventListener('click', function(eventBasket) {
+    
 });
