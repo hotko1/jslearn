@@ -21,38 +21,39 @@ P.S. Здесь есть несколько вариантов решения з
 
 let btnFilm = document.querySelector('button');
 let inputFilm = document.querySelector('.adding__input');
+const movieDB = {
+    movies: []
+};
 
 btnFilm.addEventListener('click', function(event) {
     event.preventDefault();
 
-    let text = inputFilm.value.trim();
-    text = text.charAt(0).toUpperCase() + text.slice(1);
+    let text = inputFilm.value.trim().toUpperCase(); // обрізаю зайві прробіли і роблю літери великими
 
     if (text !== '') {
-        let node = document.createElement('li');
-        node.classList.add('promo__interactive-item');
-        node.appendChild(document.createTextNode(text));
-        document.querySelector('.promo__interactive-list').appendChild(node);
+        let listItem = document.createElement('li'); // створює елемент <li>
+        listItem.classList.add('promo__interactive-item'); // додаю до li клас
+        listItem.appendChild(document.createTextNode(text)); // записую в li текст
+        document.querySelector('.promo__interactive-list').appendChild(listItem); // додаю li до списку з певним класом
 
-        let filmArray = [],
+        let filmArray = [], // створюю масив
             i = 0;
         document.querySelectorAll('.promo__interactive-list li').forEach(element => {
-            filmArray[i] = element.textContent;
+            filmArray[i] = element.textContent.trim(); // додавання фільмів в масив і обрізаю зайві пробіли
+            movieDB.movies[i] = filmArray[i]; // додавання фільмів в movieDB.movies
             i++;
         });
 
-        filmArray.sort();
+        filmArray.sort(); // сортування елементів масиву
         i = 0;
         document.querySelectorAll('.promo__interactive-list li').forEach(element => {
-            element.textContent = filmArray[i];
-            // filmArray[i].innerHTML = '<div class="delete"></div>';
-            i++;
+            if (filmArray[i].length < 22) {
+                element.innerHTML = `${filmArray[i]} <div class="delete"></div>`; // додавання в li структури html
+                i++;
+            } else {
+                element.innerHTML = `${filmArray[i].slice(0, 21)}... <div class="delete"></div>`; // додавання в li структури html, якщо довжина назви завелика
+                i++;
+            }
         });
-
-        // document.querySelectorAll('.promo__interactive-list li').forEach(element => {
-        //     element.textContent.before('')
-        //     element.textContent = filmArray[i];
-        //     i++;
-        // });
     }
 });
