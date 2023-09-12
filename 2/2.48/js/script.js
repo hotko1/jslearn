@@ -45,7 +45,14 @@ btnFilm.addEventListener('click', function(event) {
         i = 0;
         document.querySelectorAll('.promo__interactive-list li').forEach(element => {
             element.textContent = filmArray[i];
+            // filmArray[i].innerHTML = '<div class="delete"></div>';
             i++;
         });
+
+        // document.querySelectorAll('.promo__interactive-list li').forEach(element => {
+        //     element.textContent.before('')
+        //     element.textContent = filmArray[i];
+        //     i++;
+        // });
     }
 });
