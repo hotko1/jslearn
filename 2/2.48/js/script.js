@@ -21,8 +21,6 @@ P.S. Здесь есть несколько вариантов решения з
 
 let btnFilm = document.querySelector('button');
 let inputFilm = document.querySelector('.adding__input');
-// let baskets = document.querySelectorAll('.delete');
-// let basket = document.querySelector('.delete');
 const movieDB = {
     movies: []
 };
@@ -57,21 +55,31 @@ btnFilm.addEventListener('click', function(event) {
                 i++;
             }
         });
-    } 
-    
+
+        checkCheckbox();
+    }
+
     basketsAlways();
 });
+
 
 function basketsAlways () {
     let baskets = document.querySelectorAll('.delete');
 
     baskets.forEach(function(eventBasket) {
         eventBasket.addEventListener('click', function() {
-            console.log('text1');
             eventBasket.parentNode.parentNode.removeChild(eventBasket.parentNode);
-            console.log('text2');
         });
     });
 }
 
 basketsAlways();
+
+
+function checkCheckbox () {
+    let itemCheckbox = document.querySelector('input[type=checkbox]');
+
+    if (itemCheckbox.checked) {
+        console.log('Додаємо улюблений фільм');
+    }
+}
