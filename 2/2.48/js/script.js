@@ -21,7 +21,7 @@ P.S. Здесь есть несколько вариантов решения з
 
 let btnFilm = document.querySelector('button');
 let inputFilm = document.querySelector('.adding__input');
-let baskets = document.querySelectorAll('.delete');
+// let baskets = document.querySelectorAll('.delete');
 // let basket = document.querySelector('.delete');
 const movieDB = {
     movies: []
@@ -57,19 +57,21 @@ btnFilm.addEventListener('click', function(event) {
                 i++;
             }
         });
-    }
+    } 
+    
+    basketsAlways();
 });
 
-baskets.forEach(function(eventBasket) {
-    eventBasket.addEventListener('click', function() {
-        console.log('text1');
-        eventBasket.parentNode.parentNode.removeChild(eventBasket.parentNode);
-        console.log('text2');
+function basketsAlways () {
+    let baskets = document.querySelectorAll('.delete');
+
+    baskets.forEach(function(eventBasket) {
+        eventBasket.addEventListener('click', function() {
+            console.log('text1');
+            eventBasket.parentNode.parentNode.removeChild(eventBasket.parentNode);
+            console.log('text2');
+        });
     });
-});
+}
 
-// basket.addEventListener('click', function(eventBasket) {
-//     console.log('text1');
-//     basket.parentNode.parentNode.removeChild(basket.parentNode);
-//     console.log('text2');
-// });
+basketsAlways();
