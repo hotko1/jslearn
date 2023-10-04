@@ -5,7 +5,7 @@ const box = document.querySelector('.box');
 const newHeight = 100;
 const newWidth = 400;
 
-// ?? - оператор нульового зливання (Nullish), реагує лише на null та underfined, а решту сприймає як дійсні значення (навіть NaN, o, false).
+// ?? - логічний оператор нульового зливання (Nullish), реагує лише на null та underfined, а решту сприймає як дійсні значення (навіть NaN, o, false).
 
 function changeParams(elem, h, w) {
     elem.style.height = `${h ?? 200}px`;
