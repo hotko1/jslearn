@@ -15,6 +15,7 @@ body {
 }
 
 .area {
+    position: relative;
     width: 100%;
     background-color: #add8e6;
 }
