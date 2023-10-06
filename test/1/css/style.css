@@ -1,0 +1,20 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    height: 100%;
+    margin: 0;
+}
+
+.instrumet {
+    /* height: 100%; */
+    width: 200px;
+    background-color: #afc758;
+}
+
+.area {
+    width: 100%;
+    background-color: #add8e6;
+}
