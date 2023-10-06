@@ -17,32 +17,67 @@ console.log(widthArea);
 // let area = document.querySelector('.area');
 
 document.querySelector('.area').addEventListener('mousedown', function(e) {
-    // headFunction ();
+    const style = (node, styles) => Object.keys(styles).forEach(key => node.style[key] = styles[key])
+    const el = document.createElement('span');
+    style(el, {
+        position: 'absolute',
+        transform: `translate(${ e.offsetX }px, ${ e.offsetY }px`,
+        background: 'red',
+         width: '10px',
+        height: '10px'
+    })
+    document.querySelector('.area').appendChild(el);
 
-    // let area = document.querySelector('.area');
+    // pressKey();
+
     console.log(e.offsetX);
-    document.querySelector('.area').innerHTML = `<span style='position: absolute; transform: translate(${ e.offsetX }px, ${ e.offsetY }px); background-color: red; width: 10px; height: 10px'></span>`;
+    // document.querySelector('.area').innerHTML = `<span style='position: absolute; transform: translate(${ e.offsetX }px, ${ e.offsetY }px); background-color: red; width: 10px; height: 10px'></span>`;
 
-    // area = document.querySelector('.area');
-    // document.querySelector('.area').addEventListener('mousemove', function(ev) {
-    //     console.log(ev.offsetX);
-    //     document.querySelector('.area').innerHTML = `<span style='position: absolute; transform: translate(${ ev.offsetX }px, ${ ev.offsetY }px); background-color: red; width: 10px; height: 10px'></span>`;
+    moveFunction();
+
+    // document.querySelector('.area').addEventListener('mouseup', function(evv) {
+    //     return;
     // });
-    // const el = document.createElement('span');
-    // document.el.style.position = 'absolute';
-    // document.el.style.translate = `${ e.offsetX }, ${ e.offsetY }`;
-    // document.el.innerHTML += `<style>position: absolute; transform-translate: (${ e.offsetX }, ${ e.offsetY })</style>`;
-    // document.querySelector('.area').appendChild(el);
-    // this.textContent = `
-    //     relX: ${ e.offsetX }, absX: ${ e.pageX }
-    //     relY: ${ e.offsetY }, absY: ${ e.pageY }
-    // `;
 });
 
-document.querySelector('.area').addEventListener('mousemove', function(ev) {
-    console.log(ev.offsetX);
-    document.querySelector('.area').innerHTML = `<span style='position: absolute; transform: translate(${ ev.offsetX }px, ${ ev.offsetY }px); background-color: red; width: 10px; height: 10px'></span>`;
-});
+// function pressKey () {
+//     document.querySelector('.area').addEventListener('mousedown', function(e) {
+
+//         console.log(e.offsetX);
+//         document.querySelector('.area').innerHTML = `<span style='position: absolute; transform: translate(${ e.offsetX }px, ${ e.offsetY }px); background-color: red; width: 10px; height: 10px'></span>`;
+    
+//         moveFunction();
+//     });
+// }
+
+function moveFunction () {
+    document.querySelector('.area').addEventListener('mousemove', function(ev) {
+        console.log(ev.offsetX);
+        const style = (node, styles) => Object.keys(styles).forEach(key => node.style[key] = styles[key])
+        const el = document.createElement('span');
+        style(el, {
+            position: 'absolute',
+            transform: `translate(${ ev.offsetX }px, ${ ev.offsetY }px`,
+            background: 'red',
+             width: '10px',
+            height: '10px'
+        })
+        document.querySelector('.area').appendChild(el);
+
+        upFunction();
+    });
+}
+
+function upFunction () {
+    document.querySelector('.area').addEventListener('mouseup', function(ev) {
+        
+    });
+}
+
+// document.querySelector('.area').addEventListener('mousemove', function(ev) {
+//     console.log(ev.offsetX);
+//     document.querySelector('.area').innerHTML = `<span style='position: absolute; transform: translate(${ ev.offsetX }px, ${ ev.offsetY }px); background-color: red; width: 10px; height: 10px'></span>`;
+// });
 
 // document.querySelector('.area').addEventListener('mousemove', function(e) {
 //     console.log(e.offsetX);
