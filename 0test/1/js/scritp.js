@@ -98,14 +98,18 @@ function moveFunction () {
 
         upFunction(ev);
     });
+
+    document.querySelector('.area').addEventListener('mouseup', function(ev) {
+        document.removeEventListener("mousemove", function(ev) {
+
+        });
+    });
     // upFunction(ev);
 }
 
 function upFunction () {
     document.querySelector('.area').addEventListener('mouseup', function() {
-        let stopFunc = 'Stop';
-        console.log(stopFunc);
-        return stopFunc;
+        document.removeEventListener("mousemove", move);
     });
 }
 
