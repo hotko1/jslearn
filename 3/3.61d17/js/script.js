@@ -1,14 +1,14 @@
 'use strict';
 
 function amountOfPages(summary) {
-    let i = 0,
+    let i = '',
         sum = '';
     while (sum.length < summary) {
         sum += `${i}`;
         i++;
     }
 
-    console.log(i);
+    console.log(i - 1);
 }
 
-amountOfPages(9);
+amountOfPages(25);
