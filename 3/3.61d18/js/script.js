@@ -1,15 +1,34 @@
 'use strict';
 
 // Мій код перетворивши в юнікод
-// function isPangram(string) {
-//     let text = string;
-//     text = text.toLowerCase();
-//     text = charCodeAt(text);
+function isPangrams(string) {
+    let text = string;
 
-//     console.log(text);
-// }
+    text = text.toLowerCase();
 
-// isPangram('tExt Tedt');
+    for (let k = 97; k <= 122; k++) {
+
+        for (let i = 0; i <= text.length; i++) {
+            
+            if (k == text.charCodeAt(i)) {
+
+                break;
+            } else if (i  == text.length) {
+
+                console.log(false);
+                return false;
+            }
+        }
+        
+        if (k == 122) {
+
+            console.log(true);
+            return true;
+        }
+    }
+}
+
+isPangrams('The quick brown fox jumps over the lzay dog');
 
 
 // Мій код вивівши всі значення лише по одному разу і вимірявши довжину, яка має бути рівною довжині англійського алфавіту.
