@@ -3,6 +3,7 @@
 **/package-lock.json
 **/.eslintrc.js
 **/01
+**/0test/2
 
 .DS_Store
 **/.DS_Store
