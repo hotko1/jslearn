@@ -56,4 +56,12 @@ function isPangram(string) {
 isPangram('The five boxing wizards jump quickly');
 
 
-// Код ментора
+// Код ментора (всі варіанти що нижче)
+// Варіант, коли рядок перетворюється в нижній регустр до всіх операція тільки 1 раз
+// Це має економити ресурнси комп'ютера
+function isPangram1(string) {
+    string = string.toLowerCase();
+    return "abcdefghijklmnopqrstuvwxyz".split('').every(function(x){
+        return string.indexOf(x) !== -1;
+    });
+}
