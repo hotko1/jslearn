@@ -54,3 +54,6 @@ function isPangram(string) {
 }
 
 isPangram('The five boxing wizards jump quickly');
+
+
+// Код ментора
